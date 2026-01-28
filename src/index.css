@@ -16,25 +16,87 @@
 }
 
 @media print {
-  body { background: #fff !important; color: #000 !important; -webkit-print-color-adjust: exact; }
-  .dashboard-container { max-width: 100% !important; padding: 0 !important; }
-  .glass-card { 
-      background: #fff !important; 
-      border: 1px solid #ccc !important; 
-      box-shadow: none !important; 
-      break-inside: avoid; 
-      margin-bottom: 20px !important;
-      color: #000 !important;
+
+  body,
+  .min-h-screen,
+  .dashboard-container {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact;
   }
-  .no-print { display: none !important; }
-  h1, h2, h3 { color: #000 !important; }
-  .score-circle { border-color: #000 !important; color: #000 !important; }
-  .progress-bar-bg { background: #eee !important; }
-  .progress-bar-fill { background: #000 !important; }
-  a { text-decoration: none !important; color: #000 !important; }
-  .card-half, .card-third { grid-column: span 12 !important; } 
-  .header-section { justify-content: flex-start; gap: 40px; }
-  .global-score-container { flex-direction: row-reverse; }
+
+  .glass-card {
+    background: #ffffff !important;
+    border: 1px solid #dddddd !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    margin-bottom: 20px !important;
+    color: #000000 !important;
+    backdrop-filter: none !important;
+  }
+
+  .no-print,
+  button {
+    display: none !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span,
+  div {
+    color: #000000 !important;
+    text-shadow: none !important;
+  }
+
+  .score-circle {
+    border-color: #000000 !important;
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .progress-bar-bg {
+    background: #eeeeee !important;
+  }
+
+  .progress-bar-fill {
+    background: #000000 !important;
+    -webkit-print-color-adjust: exact;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: #000000 !important;
+  }
+
+  .card-half,
+  .card-third {
+    grid-column: span 12 !important;
+  }
+
+  .header-section {
+    justify-content: flex-start;
+    gap: 40px;
+    border-bottom: 2px solid #000 !important;
+  }
+
+  .global-score-container {
+    flex-direction: row-reverse;
+  }
+
+  /* Force Tailwind overrides */
+  *[class*="bg-"] {
+    background-color: #fff !important;
+  }
+
+  *[class*="text-"] {
+    color: #000 !important;
+  }
 }
 
 body {
@@ -44,9 +106,9 @@ body {
   margin: 0;
   /* padding: 20px; handled in App.jsx container if needed, but body margin 0 is good */
   line-height: 1.6;
-  background-image: 
-      radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.1) 0px, transparent 50%);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.1) 0px, transparent 50%);
   background-attachment: fixed;
   min-height: 100vh;
 }
@@ -83,7 +145,7 @@ body {
 .progress-bar-bg {
   width: 100%;
   height: 6px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   margin-bottom: 15px;
   overflow: hidden;
@@ -93,7 +155,7 @@ body {
   height: 100%;
   background: var(--accent-color);
   border-radius: 3px;
-  width: 0%; 
+  width: 0%;
   transition: width 1s ease-out;
 }
 
@@ -106,9 +168,21 @@ body {
   margin-right: 5px;
   text-transform: uppercase;
 }
-.tag-danger { background: rgba(244, 63, 94, 0.2); color: var(--danger-color); }
-.tag-warning { background: rgba(245, 158, 11, 0.2); color: var(--warning-color); }
-.tag-success { background: rgba(16, 185, 129, 0.2); color: var(--success-color); }
+
+.tag-danger {
+  background: rgba(244, 63, 94, 0.2);
+  color: var(--danger-color);
+}
+
+.tag-warning {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--warning-color);
+}
+
+.tag-success {
+  background: rgba(16, 185, 129, 0.2);
+  color: var(--success-color);
+}
 
 .btn-download {
   position: fixed;
@@ -128,6 +202,7 @@ body {
   align-items: center;
   gap: 10px;
 }
+
 .btn-download:hover {
   transform: translateY(-2px);
   box-shadow: 0 15px 35px rgba(56, 189, 248, 0.5);
@@ -139,6 +214,7 @@ body {
   padding: 10px 15px;
   margin-top: 15px;
 }
+
 .quick-win-title {
   color: var(--success-color);
   font-weight: 700;
